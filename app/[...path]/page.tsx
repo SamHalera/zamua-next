@@ -1,6 +1,6 @@
 import ContentPage from "@/components/contents/ContentPage";
 
-export default async function page({
+export default async function Page({
   params,
   searchParams,
 }: {
@@ -8,12 +8,11 @@ export default async function page({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const { path } = params;
-  // console.log(path);
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_FRONT}/api/get-public-page?pathname=${"home"}`,
+    `${process.env.NEXT_PUBLIC_FRONT}/api/get-public-page?pathname=${path}`,
     { cache: "no-cache" }
   );
+
   const pageData: PageData = await response.json();
-  // console.log(pageData);
   return <ContentPage data={pageData} />;
 }
