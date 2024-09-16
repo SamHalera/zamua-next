@@ -98,3 +98,15 @@ html,
     transform: translateY(0rem);
   }
 }
+/* .iframe-container:hover .iframe-spotify {
+  bottom: -80px;
+  opacity: 1;
+} */
+.iframe-spotify {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: -12px;
+  right: 0px;
+  height: 180px;
+  width: 100%;
+}
