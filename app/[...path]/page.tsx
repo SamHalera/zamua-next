@@ -1,3 +1,4 @@
+import { getPublicPage } from "@/actions/getPublicPage";
 import ContentPage from "@/components/contents/ContentPage";
 
 export default async function Page({
@@ -8,20 +9,9 @@ export default async function Page({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const { path } = params;
-  console.log("path inside page", path);
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_FRONT}/api/get-public-page?pathname=${path}`,
-    {
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `Bearer ${process.env.STRAPI_BEARER_TOKEN}`,
-      },
-      cache: "no-cache",
-    }
-  );
 
-  const pageData = await response.json();
-  console.log("pageData", pageData);
+  const pageData = await getPublicPage(path[0]);
+
   return (
     <>
       <ContentPage data={pageData} />

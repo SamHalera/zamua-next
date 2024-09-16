@@ -3,15 +3,15 @@ const nextConfig = {
   transpilePackages: ["lucide-react"],
   // trailingSlash: true,
   // reactStrictMode: false,
-  async redirects() {
-    return [
-      {
-        source: "/home/",
-        destination: "/",
-        permanent: true,
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/home/",
+  //       destination: "/",
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
   images: {
     path: "/_next/image",
     remotePatterns: [

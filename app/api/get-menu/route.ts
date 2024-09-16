@@ -14,7 +14,5 @@ export async function GET(req: Request) {
 
   const { data } = await response.json();
 
-  // console.log("data from route header 2", data);
-
   return Response.json(data);
 }
