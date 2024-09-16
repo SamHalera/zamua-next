@@ -1,6 +1,8 @@
 "use client";
 import NextImage from "@/components/NextImage";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -13,28 +15,33 @@ const ContentMusicFeatureSingle = ({
 }) => {
   const router = useRouter();
   return (
-    <div className="mb-48 flex flex-col items-center gap-6" key={element.title}>
-      <div className="text-center flex flex-col gap-4 mb-8">
-        <h2 className=" text-8xl">{element.title}</h2>
-        <h3 className=" text-7xl">{element.subtitle}</h3>
+    <div className="mb-20 flex flex-col items-center gap-6" key={element.title}>
+      <div className="text-center flex flex-col gap-4 h-28">
+        <h2 className="text-white text-5xl">{element.title}</h2>
+        <h3 className="text-white text-2xl">{element.subtitle}</h3>
       </div>
-      <div>
+      <div className="relative flex flex-col items-center iframe-container">
         {element.image && children}
 
-        <div dangerouslySetInnerHTML={{ __html: element.url_feature }} />
+        <div
+          className=""
+          dangerouslySetInnerHTML={{ __html: element.url_feature }}
+        />
       </div>
       <div
         className="w-2/3 text-xl leading-9"
         dangerouslySetInnerHTML={{ __html: element.text }}
       />
-      <Button
-        onClick={() => {
-          router.push(element.cta.path);
-        }}
-        className="self-center bg-primary text-black hover:bg-transparent transition-all border-2 border-primary hover:text-primary"
-      >
-        {element.cta.label}
-      </Button>
+      {element.cta && (
+        <Link
+          href={element.cta.path}
+          target="_blank"
+          className="self-center bg-primary text-black hover:bg-transparent transition-all border-2 border-primary hover:text-primary h-12 px-6 py-2 font-bold block"
+          // className={cn(buttonVariants({ variant: "default" }))}
+        >
+          {element.cta.label.toUpperCase()}
+        </Link>
+      )}
     </div>
   );
 };

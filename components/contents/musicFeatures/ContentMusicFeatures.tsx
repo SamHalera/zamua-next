@@ -9,13 +9,19 @@ const ContentMusicFeatures = ({
 }: {
   component: TContentMusicFeatures;
 }) => {
-  return component.musicFeatureSingle.map((elt: TContentMusicFeatureSingle) => {
-    return (
-      <ContentMusicFeatureSingle key={elt.title} element={elt}>
-        <NextImage dataImage={elt.image} customClass="w-[400px] mb-4" />
-      </ContentMusicFeatureSingle>
-    );
-  });
+  return (
+    <div className="flex flex-wrap justify-center gap-20 bg-black py-32">
+      {component.musicFeatureSingle.map((elt: TContentMusicFeatureSingle) => {
+        return (
+          <ContentMusicFeatureSingle key={elt.title} element={elt}>
+            {elt.image && (
+              <NextImage dataImage={elt.image} customClass="w-[500px] my-4" />
+            )}
+          </ContentMusicFeatureSingle>
+        );
+      })}
+    </div>
+  );
 };
 
 export default ContentMusicFeatures;

@@ -8,7 +8,7 @@ import React from "react";
 const ContentText = ({ component }: { component: TContentText }) => {
   const router = useRouter();
   return (
-    <div className="flex flex-col w-3/4 mx-auto mb-24">
+    <div className="flex flex-col px-48 mx-auto mb-24">
       <div
         className=" text-xl leading-9 mb-9"
         dangerouslySetInnerHTML={{ __html: component.text }}
