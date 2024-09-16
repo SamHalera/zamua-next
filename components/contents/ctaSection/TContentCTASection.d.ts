@@ -6,6 +6,7 @@ type TContentCTASection = {
   btnLabel: string;
   btnUrl: string;
   ctaOptions: TCTAOptions;
+  cta: TCta;
 };
 
 type TCTAOptions = {

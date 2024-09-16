@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+:root {
+  @apply scroll-smooth;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -72,5 +76,25 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.line-scroll {
+  bottom: 19.5rem;
+  left: -0.7rem;
+  -webkit-animation: infinite 2.5s ease-in-out scrollAnimation;
+  animation: infinite 2.5s ease-in-out scrollAnimation;
+}
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    transform: translateY(0rem);
   }
 }

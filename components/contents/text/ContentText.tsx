@@ -6,18 +6,19 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const ContentText = ({ component }: { component: TContentText }) => {
-  console.log(component);
-
   const router = useRouter();
   return (
-    <div className="flex flex-col items-center justify-center w-3/4 m-auto gap-8">
-      <div dangerouslySetInnerHTML={{ __html: component.text }} />
+    <div className="flex flex-col w-3/4 mx-auto mb-24">
+      <div
+        className=" text-xl leading-9 mb-9"
+        dangerouslySetInnerHTML={{ __html: component.text }}
+      />
       {component.cta && (
         <Button
           onClick={() => {
-            router.push("/bio/");
+            router.push(component.cta.path);
           }}
-          className="bg-primary"
+          className="self-center bg-primary text-black hover:bg-transparent transition-all border-2 border-primary hover:text-primary"
         >
           {component.cta.label}
         </Button>

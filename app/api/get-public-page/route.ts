@@ -8,12 +8,10 @@ export async function GET(req: NextRequest) {
     path = `${pathname.split(",").join("/")}`;
   }
 
-  console.log(path);
   const response = await fetch(
     `${process.env.STRAPI_API_URL}/api/custom/getPageByPathname?pathname=${
       path.startsWith("uploads") ? "/" + path : path
     }`,
-    // `${process.env.STRAPI_API_URL}/api/page-publics?populate=*`,
     {
       headers: {
         "Content-type": "application/json",
