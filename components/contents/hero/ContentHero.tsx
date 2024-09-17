@@ -30,7 +30,7 @@ const ContentHero = ({
                 className="flex flex-col gap-8 items-center"
               >
                 <NextImage dataImage={component.image} customClass="w-96" />
-                {path === "/home/" && (
+                {path === "/" && (
                   <div className="flex justify-between items-center gap-4">
                     <img
                       src={spotifyLogo.src}

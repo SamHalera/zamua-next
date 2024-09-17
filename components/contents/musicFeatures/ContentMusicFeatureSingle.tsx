@@ -4,27 +4,47 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ContentMusicFeatureSingle = ({
   element,
   children,
+  path,
 }: {
   element: TContentMusicFeatureSingle;
   children: React.ReactNode;
+  path: string;
 }) => {
   const router = useRouter();
+
   return (
     <div className="mb-20 flex flex-col items-center gap-6" key={element.title}>
-      <div className="text-center flex flex-col gap-4 h-28">
-        <h2 className="text-white text-5xl">{element.title}</h2>
-        <h3 className="text-white text-2xl">{element.subtitle}</h3>
+      <div
+        className={cn("text-center flex flex-col gap-4 h-28", {
+          "h-44": path === "/",
+        })}
+      >
+        <h2
+          className={cn("text-white text-5xl", {
+            "text-black text-8xl": path === "/",
+          })}
+        >
+          {element.title}
+        </h2>
+        <h3
+          className={cn("text-white text-2xl", {
+            "text-black text-7xl": path === "/",
+          })}
+        >
+          {element.subtitle}
+        </h3>
       </div>
-      <div className="relative flex flex-col items-center iframe-container">
+      <div id="iframe-container" className=" flex flex-col items-center">
         {element.image && children}
 
         <div
-          className=""
+          className=" w-full"
+          id={element.id.toString()}
           dangerouslySetInnerHTML={{ __html: element.url_feature }}
         />
       </div>

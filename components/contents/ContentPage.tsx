@@ -1,12 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
-// import ContentHero from "./hero/ContentHero";
-// import ContentCTASection from "./ctaSection/ContentCTASection";
-// import ContentText from "./text/ContentText";
-// import ContentMusicFeatures from "./musicFeatures/ContentMusicFeatures";
-// import ContentFeatureText from "./featureText/ContentFeatureText";
-// import ContentCta from "./cta/ContentCta";
-// import ContentSecondaryHero from "./secondaryHero/ContentSecondaryHero";
+
 const ContentHero = dynamic(
   () => import("@/components/contents/hero/ContentHero")
 );
@@ -57,6 +51,7 @@ const ContentPage = ({ data }: { data: PageData }) => {
           "contents.music-features" && (
           <ContentMusicFeatures
             component={component as TContentMusicFeatures}
+            path={data.path}
           />
         ),
         "contents.feature-text": __component === "contents.feature-text" && (
