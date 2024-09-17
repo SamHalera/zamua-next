@@ -1,5 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import ContentMediaFrames from "./mediaFrames/ContentMediaFrames";
+import { getProjects } from "@/actions/projects";
 
 const ContentHero = dynamic(
   () => import("@/components/contents/hero/ContentHero")
@@ -22,7 +24,10 @@ const ContentCta = dynamic(
 const ContentSecondaryHero = dynamic(
   () => import("@/components/contents/secondaryHero/ContentSecondaryHero")
 );
-const ContentPage = ({ data }: { data: PageData }) => {
+const ContentGallery = dynamic(
+  () => import("@/components/contents/gallery/ContentGallery")
+);
+const ContentPage = async ({ data }: { data: PageData }) => {
   if (data.dynamicZone && data.dynamicZone.length > 0) {
     const Component = ({ component }: { component: TComponent }) => {
       const { __component } = component;
@@ -56,6 +61,12 @@ const ContentPage = ({ data }: { data: PageData }) => {
         ),
         "contents.feature-text": __component === "contents.feature-text" && (
           <ContentFeatureText component={component as TContentFeatureText} />
+        ),
+        "contents.galery": __component === "contents.galery" && (
+          <ContentGallery component={component as TContentGallery} />
+        ),
+        "contents.media-frames": __component === "contents.media-frames" && (
+          <ContentMediaFrames component={component as TContentMediaFrames} />
         ),
       };
       return NextComponent[__component];

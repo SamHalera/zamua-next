@@ -10,4 +10,6 @@ type TComponent = {
   | TContentFeatureText
   | TCta
   | TContentSecondaryHero
+  | TContentGallery
+  | TContentMediaFrames
 );
