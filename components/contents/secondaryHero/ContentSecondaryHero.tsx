@@ -1,9 +1,6 @@
-import NextImage from "@/components/NextImage";
 import { cn } from "@/lib/cn";
 import { formatTitle } from "@/lib/utils";
-import spotifyLogo from "@/public/images/spotify-logo-black.png";
-import deezerLogo from "@/public/images/deezer.png";
-import appleLogo from "@/public/images/apple-music.svg";
+
 import Link from "next/link";
 const ContentSecondaryHero = ({
   component,
