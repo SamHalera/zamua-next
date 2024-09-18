@@ -1,7 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import ContentMediaFrames from "./mediaFrames/ContentMediaFrames";
-import { getProjects } from "@/actions/projects";
 
 const ContentHero = dynamic(
   () => import("@/components/contents/hero/ContentHero")
