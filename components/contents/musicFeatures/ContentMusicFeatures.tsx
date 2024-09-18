@@ -1,27 +1,34 @@
 import NextImage from "@/components/NextImage";
+import { Button } from "@/components/ui/button";
+
 import React from "react";
+import ContentMusicFeatureSingle from "./ContentMusicFeatureSingle";
+import { cn } from "@/lib/utils";
 
 const ContentMusicFeatures = ({
   component,
+  path,
 }: {
   component: TContentMusicFeatures;
+  path: string;
 }) => {
-  console.log(component);
-  return component.musicFeatureSingle.map((elt: TContentMusicFeatureSingle) => {
-    return (
-      <div key={elt.title}>
-        <div>
-          <h2>{elt.title}</h2>
-          <h3>{elt.subtitle}</h3>
-        </div>
-        <div>
-          {elt.image && <NextImage dataImage={elt.image} />}
-
-          <div dangerouslySetInnerHTML={{ __html: elt.url_feature }} />
-        </div>
-      </div>
-    );
-  });
+  return (
+    <div
+      className={cn("flex flex-wrap justify-center gap-20 py-32 px-20", {
+        "bg-black": component.bgColor && component.bgColor === "black",
+      })}
+    >
+      {component.musicFeatureSingle.map((elt: TContentMusicFeatureSingle) => {
+        return (
+          <ContentMusicFeatureSingle key={elt.title} element={elt} path={path}>
+            {elt.image && (
+              <NextImage dataImage={elt.image} customClass="w-[400px]" />
+            )}
+          </ContentMusicFeatureSingle>
+        );
+      })}
+    </div>
+  );
 };
 
 export default ContentMusicFeatures;
