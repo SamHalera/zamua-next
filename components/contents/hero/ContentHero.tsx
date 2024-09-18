@@ -16,7 +16,8 @@ const ContentHero = ({
     <>
       <div
         className={cn("relative mb-12 bg-cover bg-bottom p-32 bg-fixed", {
-          "h-screen": component.isHomePage,
+          "h-screen":
+            component.isHomePage || component.optionsHero.height === "100",
         })}
         style={{
           backgroundImage: `url(/images/${component.optionsHero.bgImage})`,
@@ -73,8 +74,7 @@ const ContentHero = ({
           </Link>
         )}
       </div>
-
-      <div id="toScroll" className=" mb-40"></div>
+      {component.iconScroll && <div id="toScroll" className=" mb-40"></div>}
     </>
   );
 };

@@ -1,17 +1,17 @@
 import Link from "next/link";
 import React from "react";
 
-const Menu = ({ menu }: { menu: Menu }) => {
+const FooterMenu = ({ menu }: { menu: Menu }) => {
   return (
-    <nav className="flex gap-5 ">
+    <nav className="flex flex-col gap-4 items-center">
       {menu.map((item: MenuItem) => {
         return (
           <Link
             key={item.label}
-            className="text-white hover:text-primary duration-500"
             href={item.path}
+            className="text-primary hover:text-primary/80 duration-500"
           >
-            {item.label.toUpperCase()}
+            {item.label}
           </Link>
         );
       })}
@@ -19,4 +19,4 @@ const Menu = ({ menu }: { menu: Menu }) => {
   );
 };
 
-export default Menu;
+export default FooterMenu;
