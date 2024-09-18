@@ -17,7 +17,7 @@ const Header = async () => {
   });
 
   return (
-    <header className=" h-24 bg-black flex justify-center">
+    <header className=" h-24 bg-black flex justify-center sticky top-0 z-50">
       <div className="flex justify-between items-center container">
         <Link href="/">
           <Image
