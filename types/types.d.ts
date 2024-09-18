@@ -42,3 +42,13 @@ type TProjectMember = {
   name: string;
   roles: string;
 };
+
+type TPlaylist = {
+  id: number;
+  title: string;
+  imageCover: TMedia;
+  url: string;
+  iframe: string;
+  description: string;
+  slug: string;
+};
