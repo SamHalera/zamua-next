@@ -8,7 +8,7 @@ const page = async ({
   params: { slug: string; index: number };
 }) => {
   const { slug } = params;
-  console.log(slug[0]);
+
   const playlist: TPlaylist = await getPlaylist(slug[1]);
 
   return (
