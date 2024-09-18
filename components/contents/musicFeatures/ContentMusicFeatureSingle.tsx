@@ -55,7 +55,6 @@ const ContentMusicFeatureSingle = ({
       {element.cta && (
         <Link
           href={element.cta.path}
-          target="_blank"
           className="self-center bg-primary text-black hover:bg-transparent transition-all border-2 border-primary hover:text-primary h-12 px-6 py-2 font-bold block"
           // className={cn(buttonVariants({ variant: "default" }))}
         >
