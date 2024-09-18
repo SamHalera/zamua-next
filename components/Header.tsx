@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getMenu } from "@/actions/getMenu";
 
 const Header = async () => {
-  const data = await getMenu();
+  const data = await getMenu("navigation");
 
   let menu: Menu = [];
   data.map((item: PagePublic) => {

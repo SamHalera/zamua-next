@@ -1,7 +1,7 @@
-export const getMenu = async () => {
+export const getMenu = async (type: string) => {
   try {
     const response = await fetch(
-      `${process.env.STRAPI_API_URL}/api/page-publics?filters[type][$eq]=navigation`,
+      `${process.env.STRAPI_API_URL}/api/page-publics?filters[type][$eq]=${type}`,
       {
         cache: "no-cache",
         headers: {
