@@ -2,10 +2,16 @@ import { Link2 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-const PlaylistThumbnail = ({ playlist }: { playlist: TPlaylist }) => {
+const PlaylistThumbnail = ({
+  playlist,
+  index,
+}: {
+  playlist: TPlaylist;
+  index: number;
+}) => {
   return (
     <Link
-      href={`/playlists/${playlist.slug}`}
+      href={`/playlists/${index}/${playlist.slug}`}
       className="w-60 h-60 bg-cover bg-center rounded-md block shadow-lg group"
       style={{
         backgroundImage: `url(${process.env.STRAPI_API_URL}${playlist.imageCover.url})`,

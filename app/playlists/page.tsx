@@ -29,8 +29,14 @@ const page = async () => {
 
       <div className="flex flex-wrap justify-center gap-8">
         {playlists?.length > 0 &&
-          playlists.map((playlist: TPlaylist) => {
-            return <PlaylistThumbnail key={playlist.id} playlist={playlist} />;
+          playlists.map((playlist: TPlaylist, index: number) => {
+            return (
+              <PlaylistThumbnail
+                key={playlist.id}
+                playlist={playlist}
+                index={index + 1}
+              />
+            );
           })}
       </div>
     </div>
