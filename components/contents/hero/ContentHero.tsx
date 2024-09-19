@@ -15,38 +15,44 @@ const ContentHero = ({
   return (
     <>
       <div
-        className={cn("relative mb-12 bg-cover bg-bottom p-32 bg-fixed", {
-          "h-screen":
-            component.isHomePage || component.optionsHero.height === "100",
-        })}
+        className={cn(
+          "relative mb-12 bg-cover bg-bottom px-8 py-24 lg:p-32 bg-scroll lg:bg-fixed flex justify-center h-auto",
+          {
+            "lg:h-screen":
+              component.isHomePage || component.optionsHero.height === "100",
+          }
+        )}
         style={{
           backgroundImage: `url(/images/${component.optionsHero.bgImage})`,
         }}
       >
-        <div className="flex justify-center items-center gap-16">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-16">
           <div className="">
             {component.image && (
               <Link
                 href="https://ditto.fm/litanie-zamua"
                 className="flex flex-col gap-8 items-center"
               >
-                <NextImage dataImage={component.image} customClass="w-96" />
+                <NextImage
+                  dataImage={component.image}
+                  customClass="lg:w-96 w-72 shadow-lg"
+                />
                 {path === "/" && (
                   <div className="flex justify-between items-center gap-4">
                     <img
                       src={spotifyLogo.src}
                       alt="spotify logo"
-                      className=" w-28"
+                      className="w-20 lg:w-28 "
                     />
                     <img
                       src={deezerLogo.src}
                       alt="spotify logo"
-                      className=" w-28"
+                      className="w-20 lg:w-28"
                     />
                     <img
                       src={appleLogo.src}
                       alt="spotify logo"
-                      className=" w-28"
+                      className="w-20 lg:w-28"
                     />
                   </div>
                 )}
@@ -54,7 +60,7 @@ const ContentHero = ({
             )}
           </div>
           <div
-            className="text-black text-7xl w-2/3"
+            className="text-black text-6xl font-normal text-center lg:text-start w-full lg:text-7xl lg:w-2/3 mb-3"
             dangerouslySetInnerHTML={{ __html: formatTitle(component.title) }}
           />
         </div>
@@ -70,7 +76,7 @@ const ContentHero = ({
             >
               scroll
             </span>
-            <div className=" w-[2px] h-60 bg-primary"></div>
+            <div className=" w-[2px] h-36 lg:h-60 bg-primary"></div>
           </Link>
         )}
       </div>

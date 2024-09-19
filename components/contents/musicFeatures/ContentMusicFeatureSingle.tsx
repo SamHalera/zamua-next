@@ -49,7 +49,7 @@ const ContentMusicFeatureSingle = ({
         />
       </div>
       <div
-        className="w-2/3 text-xl leading-9"
+        className="lg:w-2/3 text-xl leading-9"
         dangerouslySetInnerHTML={{ __html: element.text }}
       />
       {element.cta && (

@@ -22,7 +22,7 @@ const ContentCTASection = ({
       }}
     >
       <div className="bg-black/60 h-screen flex flex-col items-center justify-center gap-8">
-        <h1 className="text-primary text-7xl">{component.title}</h1>
+        <h1 className="text-primary text-6xl lg:text-7xl">{component.title}</h1>
 
         <div
           className="text-white text-3xl leading-10 px-28"
