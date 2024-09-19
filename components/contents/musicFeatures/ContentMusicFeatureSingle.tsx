@@ -26,7 +26,7 @@ const ContentMusicFeatureSingle = ({
       >
         <h2
           className={cn("text-white text-5xl", {
-            "text-black text-8xl": path === "/",
+            "text-black text-7xl md:text-8xl": path === "/",
           })}
         >
           {element.title}

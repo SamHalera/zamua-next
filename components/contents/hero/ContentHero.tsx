@@ -60,14 +60,14 @@ const ContentHero = ({
             )}
           </div>
           <div
-            className="text-black text-6xl font-normal text-center lg:text-start w-full lg:text-7xl lg:w-2/3 mb-3"
+            className="text-black font-normal text-center text-4xl sm:text-5xl md:text-6xl lg:text-start w-full xl:text-7xl lg:w-2/3 mb-3"
             dangerouslySetInnerHTML={{ __html: formatTitle(component.title) }}
           />
         </div>
         {component.iconScroll && (
           <Link
             href="#toScroll"
-            className="absolute left-2/4 -bottom-32 flex flex-col items-center gap-6"
+            className="absolute left-2/4 -bottom-24 md:-bottom-32 flex flex-col items-center gap-6"
           >
             <span
               className={cn("[writing-mode:vertical-lr] line-scroll", {
@@ -76,7 +76,7 @@ const ContentHero = ({
             >
               scroll
             </span>
-            <div className=" w-[2px] h-36 lg:h-60 bg-primary"></div>
+            <div className=" w-[2px] h-28 md:h-36 lg:h-60 bg-primary"></div>
           </Link>
         )}
       </div>

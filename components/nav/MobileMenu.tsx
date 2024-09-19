@@ -20,7 +20,7 @@ const MobileMenu = ({ menu }: { menu: Menu }) => {
           className="size-10 text-primary cursor-pointer"
         />
       ) : (
-        <div className="bg-black absolute top-0 left-0 h-screen w-full z-50 flex flex-col items-end gap-8 p-10">
+        <div className="bg-black absolute top-0 left-0 h-screen w-full z-50 flex flex-col items-end gap-4 p-10">
           <CircleX
             onClick={handleShowMenuClick}
             className="size-10 text-primary cursor-pointer mb-10"
@@ -31,7 +31,7 @@ const MobileMenu = ({ menu }: { menu: Menu }) => {
                 onClick={handleShowMenuClick}
                 key={item.label}
                 className={cn(
-                  "text-primary text-xl hover:text-primary/80 pb-1 border-b-2 border-transparent",
+                  "text-primary text-2xl hover:text-primary/80 pb-1 border-b-2 border-transparent",
                   {
                     " border-primary":
                       pathname === `/${item.path.slice(1, -1)}`,

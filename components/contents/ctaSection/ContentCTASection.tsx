@@ -14,18 +14,20 @@ const ContentCTASection = ({
 
   return (
     <div
-      className={cn(" bg-cover bg-fixed", {
-        "h-screen": component.ctaOptions.height === "100",
+      className={cn(" bg-cover bg-scroll bg-right-top lg:bg-fixed", {
+        "h-auto md:h-screen": component.ctaOptions.height === "100",
       })}
       style={{
         backgroundImage: `url(/images/${component.ctaOptions.bgImage})`,
       }}
     >
       <div className="bg-black/60 h-screen flex flex-col items-center justify-center gap-8">
-        <h1 className="text-primary text-6xl lg:text-7xl">{component.title}</h1>
+        <h1 className="text-primary text-5xl text-center md:text-6xl lg:text-7xl">
+          {component.title}
+        </h1>
 
         <div
-          className="text-white text-3xl leading-10 px-28"
+          className="text-white text-2xl md:text-3xl leading-10 px-7 md:px-28"
           dangerouslySetInnerHTML={{ __html: component.text }}
         />
         <Button
