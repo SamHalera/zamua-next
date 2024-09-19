@@ -4,6 +4,7 @@ import React from "react";
 
 const page = async () => {
   const playlists: TPlaylist[] = await getPlaylists();
+  console.log(playlists);
   return (
     <div className="flex flex-col gap-8 items-center p-11">
       <h1 className="text-6xl">PLAY THE TAPE!</h1>
