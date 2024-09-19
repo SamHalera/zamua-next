@@ -5,13 +5,13 @@ const ProjectThumbnail = ({ project }: { project: TProject }) => {
   return (
     <Link href={`${process.env.NEXT_PUBLIC_FRONT}/projects/${project.slug}`}>
       <div
-        className="h-[400px] w-[400px] bg-cover bg-bottom shadow-lg group"
+        className="h-72 w-72sm:h-[400px] sm:w-[400px] bg-cover bg-bottom shadow-lg group"
         style={{
           backgroundImage: `url(${process.env.STRAPI_API_URL}${project.imageCover.url})`,
         }}
       >
-        <div className="h-[400px] w-[400px] bg-black/50 transition-all hover:bg-black/80 flex justify-center items-center ">
-          <div className="h-[330px] w-[330px] border border-primary flex justify-center items-center gap-2 relative">
+        <div className="h-72 w-72 sm:h-[400px] sm:w-[400px] bg-black/50 transition-all hover:bg-black/80 flex justify-center items-center ">
+          <div className="h-64 w-64 md:h-[330px] md:w-[330px] border border-primary flex justify-center items-center gap-2 relative">
             <h3 className="absolute left-10 bottom-16 text-primary text-[18px] font-semibold duration-500 group-hover:bottom-24">
               {project.first_title.toUpperCase()}
             </h3>

@@ -10,8 +10,9 @@ const MobileMenu = ({ menu }: { menu: Menu }) => {
   const handleShowMenuClick = () => {
     setShowMenu(!showMenu);
   };
-
   const pathname = usePathname();
+  console.log(pathname.split("/")[1]);
+
   return (
     <div className="block lg:hidden">
       {!showMenu ? (
@@ -26,6 +27,8 @@ const MobileMenu = ({ menu }: { menu: Menu }) => {
             className="size-10 text-primary cursor-pointer mb-10"
           />
           {menu.map((item: MenuItem) => {
+            console.log(`${item.path.slice(1, -1)}`);
+
             return (
               <Link
                 onClick={handleShowMenuClick}
@@ -34,7 +37,8 @@ const MobileMenu = ({ menu }: { menu: Menu }) => {
                   "text-primary text-2xl hover:text-primary/80 pb-1 border-b-2 border-transparent",
                   {
                     " border-primary":
-                      pathname === `/${item.path.slice(1, -1)}`,
+                      pathname === `/${item.path.slice(1, -1)}` ||
+                      pathname.split("/")[1] === `${item.path.slice(1, -1)}`,
                   }
                 )}
                 href={item.path}

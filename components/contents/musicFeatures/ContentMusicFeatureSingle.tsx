@@ -25,7 +25,7 @@ const ContentMusicFeatureSingle = ({
         })}
       >
         <h2
-          className={cn("text-white text-5xl", {
+          className={cn("text-white text-4xl lg:text-5xl", {
             "text-black text-7xl md:text-8xl": path === "/",
           })}
         >
@@ -43,7 +43,7 @@ const ContentMusicFeatureSingle = ({
         {element.image && children}
 
         <div
-          className=" w-full"
+          className="w-full"
           id={element.id.toString()}
           dangerouslySetInnerHTML={{ __html: element.url_feature }}
         />
@@ -56,7 +56,6 @@ const ContentMusicFeatureSingle = ({
         <Link
           href={element.cta.path}
           className="self-center bg-primary text-black hover:bg-transparent transition-all border-2 border-primary hover:text-primary h-12 px-6 py-2 font-bold block"
-          // className={cn(buttonVariants({ variant: "default" }))}
         >
           {element.cta.label.toUpperCase()}
         </Link>

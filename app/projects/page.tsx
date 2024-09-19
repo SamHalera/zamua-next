@@ -11,7 +11,7 @@ const page = async () => {
   return (
     <div className="">
       <ProjectHero />
-      <div className="flex flex-wrap justify-center gap-12 py-10 mb-10">
+      <div className="flex flex-wrap justify-center gap-12 py-10 mb-0 lg:mb-10">
         {projects.length > 0 &&
           projects.map((project: TProject) => {
             return <ProjectThumbnail key={project.id} project={project} />;

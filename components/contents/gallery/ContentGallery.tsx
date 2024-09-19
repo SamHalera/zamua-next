@@ -14,7 +14,7 @@ const ContentGallery = ({ component }: { component: TContentGallery }) => {
   return (
     <div>
       <h2 className="text-6xl text-center font-semibold">{component.title}</h2>
-      <div className="gap-8 columns-3 p-8 obj">
+      <div className="gap-8 columns-2 md:columns-3 p-8 obj">
         <LightGalleryComponent images={component.image}>
           {component.image.length > 0 &&
             component.image.map((item: TMedia) => {

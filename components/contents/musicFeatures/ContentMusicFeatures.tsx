@@ -15,7 +15,7 @@ const ContentMusicFeatures = ({
   return (
     <div
       className={cn(
-        "flex flex-wrap justify-center gap-20 py-32 px-10 md:px-20",
+        "flex flex-wrap justify-center md:gap-8 lg:gap-20 py-32 px-10",
         {
           "bg-black": component.bgColor && component.bgColor === "black",
         }
@@ -27,7 +27,7 @@ const ContentMusicFeatures = ({
             {elt.image && (
               <NextImage
                 dataImage={elt.image}
-                customClass="w-64 md:w-[400px]"
+                customClass="w-64 md:w-[320px]"
               />
             )}
           </ContentMusicFeatureSingle>

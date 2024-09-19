@@ -4,11 +4,11 @@ import React from "react";
 
 const page = async () => {
   const playlists: TPlaylist[] = await getPlaylists();
-  console.log(playlists);
+
   return (
-    <div className="flex flex-col gap-8 items-center p-11">
-      <h1 className="text-6xl">PLAY THE TAPE!</h1>
-      <h2 className="text-4xl">SOME PLAYLISTS...</h2>
+    <div className="flex flex-col gap-8 items-center p-5 md:p-11">
+      <h1 className="text-6xl text-center md:text-start">PLAY THE TAPE!</h1>
+      <h2 className="text-4xl text-center md:text-start">SOME PLAYLISTS...</h2>
       <div>
         <p>
           PLAY-THE-TAPE is a section dedicated to the music and artists I listen
