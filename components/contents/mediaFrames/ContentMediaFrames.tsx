@@ -10,7 +10,10 @@ const ContentMediaFrames = ({
       {component.Media.length > 0 &&
         component.Media.map((item) => {
           return (
-            <div key={item.id}>
+            <div
+              className=" max-w-full mx-auto md:w-[560px] w-96"
+              key={item.id}
+            >
               <div dangerouslySetInnerHTML={{ __html: item.iframe }} />
             </div>
           );

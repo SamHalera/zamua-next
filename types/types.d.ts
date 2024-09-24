@@ -42,3 +42,28 @@ type TProjectMember = {
   name: string;
   roles: string;
 };
+
+type TPlaylist = {
+  id: number;
+  title: string;
+  imageCover: TMedia;
+  url: string;
+  iframe: string;
+  description: string;
+  slug: string;
+};
+
+type TShow = {
+  id: number;
+  attributes: {
+    datetime: Date;
+    name: string;
+    venue: string;
+    venue_url: string;
+    location: string;
+    location_url: string;
+    ticket_url: string;
+    isPassed: boolean;
+    isCanceled: boolean;
+  };
+};

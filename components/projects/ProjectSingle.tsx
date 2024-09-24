@@ -7,7 +7,7 @@ import ContentGallery from "../contents/gallery/ContentGallery";
 const ProjectSingle = ({ project }: { project: TProject }) => {
   return (
     <>
-      <div className="p-12 ">
+      <div className="p-6 md:p-12">
         <Link
           className="mb-6 bg-primary text-black border-2 border-primary hover:bg-transparent hover:text-primary transition-all h-14 w-36 flex justify-center items-center "
           href={"/projects#toScroll"}
@@ -16,13 +16,13 @@ const ProjectSingle = ({ project }: { project: TProject }) => {
         </Link>
         <div className="flex flex-col items-center w-full gap-6">
           <h1
-            className="text-5xl font-semibold"
+            className="text-5xl font-semibold text-center md:text-start"
             dangerouslySetInnerHTML={{
               __html: formatTitle(project.main_title.toUpperCase()),
             }}
           />
 
-          <div className="flex gap-11 items-end">
+          <div className="flex flex-col md:flex-row gap-11 items-end">
             <NextImage
               dataImage={project.imageCover}
               customClass="w-[300px] shadow-lg"
@@ -45,7 +45,7 @@ const ProjectSingle = ({ project }: { project: TProject }) => {
       </div>
       {project.Gallery?.image?.length > 0 && (
         <div className=" mx-auto flex justify-center">
-          <div className="w-2/3 ">
+          <div className="w-full md:w-2/3 ">
             <ContentGallery component={project.Gallery} />
           </div>
         </div>

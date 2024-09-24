@@ -12,4 +12,5 @@ type TComponent = {
   | TContentSecondaryHero
   | TContentGallery
   | TContentMediaFrames
+  | TContentContactHero
 );

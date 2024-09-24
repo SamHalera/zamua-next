@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import ContentMediaFrames from "./mediaFrames/ContentMediaFrames";
+import ContentContactHero from "./contactHero/ContentContactHero";
 
 const ContentHero = dynamic(
   () => import("@/components/contents/hero/ContentHero")
@@ -66,6 +67,9 @@ const ContentPage = async ({ data }: { data: PageData }) => {
         ),
         "contents.media-frames": __component === "contents.media-frames" && (
           <ContentMediaFrames component={component as TContentMediaFrames} />
+        ),
+        "contents.contact-hero": __component === "contents.contact-hero" && (
+          <ContentContactHero component={component as TContentContactHero} />
         ),
       };
       return NextComponent[__component];

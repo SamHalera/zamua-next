@@ -14,7 +14,7 @@ const ContentGallery = ({ component }: { component: TContentGallery }) => {
   return (
     <div>
       <h2 className="text-6xl text-center font-semibold">{component.title}</h2>
-      <div className="gap-8 columns-3 p-8 obj">
+      <div className="gap-8 columns-2 md:columns-3 p-8 obj">
         <LightGalleryComponent images={component.image}>
           {component.image.length > 0 &&
             component.image.map((item: TMedia) => {
@@ -26,7 +26,7 @@ const ContentGallery = ({ component }: { component: TContentGallery }) => {
                 <a
                   key={item.id}
                   data-lg-size="1600-1067"
-                  className=" cursor-pointer"
+                  className=" cursor-pointer  hover:opacity-75 duration-700"
                   data-src={`${process.env.STRAPI_API_URL}${item.url}`}
                   data-sub-html={caption}
                 >
