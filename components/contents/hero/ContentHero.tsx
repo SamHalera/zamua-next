@@ -60,7 +60,7 @@ const ContentHero = ({
             )}
           </div>
           <div
-            className="text-black font-normal text-center text-4xl sm:text-5xl md:text-6xlxl:text-7xl lg:text-start w-full  lg:w-2/3 mb-3"
+            className="text-black font-normal text-center text-4xl sm:text-5xl md:text-6xl xl:text-7xl lg:text-start w-full  lg:w-2/3 mb-3"
             dangerouslySetInnerHTML={{ __html: formatTitle(component.title) }}
           />
         </div>

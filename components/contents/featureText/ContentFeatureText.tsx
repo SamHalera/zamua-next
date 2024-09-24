@@ -14,7 +14,7 @@ const ContentFeatureText = ({
       <div className="mb-4 flex flex-col gap-8">
         <div
           className={cn(
-            "text-center xl:text-start text-black font-bold text-4xl md:text-5xl md:w-[700px] z-10",
+            "text-center lg:text-start text-black font-bold text-4xl md:text-5xl md:w-[700px] z-10",
             {
               "text-primary":
                 component.model === "primary" || component.model === "ternary",
@@ -23,7 +23,7 @@ const ContentFeatureText = ({
           dangerouslySetInnerHTML={{ __html: component.text }}
         />
         {component.cta && (
-          <div className=" z-30 self-center xl:self-end">
+          <div className=" z-30 self-center lg:self-end">
             <Link
               className="bg-primary text-black font-semibold border-2 border-primary hover:bg-transparent hover:text-primary transition-all h-14 w-36 flex justify-center items-center "
               href={component.cta.path}
@@ -42,14 +42,14 @@ const ContentFeatureText = ({
         )}
       </div>
       <div
-        className={cn("hidden xl:absolute right-80 top-20", {
+        className={cn("hidden lg:absolute right-80 top-20", {
           "bg-primary w-96 h-[500px]": component.model === "secondary",
           "bg-black w-[450px] h-[500px]":
             component.model === "primary" || component.model === "ternary",
         })}
       ></div>
       <div
-        className={cn("hidden xl:absolute left-96 top-96", {
+        className={cn("hidden lg:absolute left-96 top-96", {
           "bg-[#E3A53F] w-[500px] h-96":
             component.model === "primary" || component.model === "secondary",
           "bg-[#FE015A] w-[500px] h-72": component.model === "ternary",

@@ -26,7 +26,7 @@ const ContentGallery = ({ component }: { component: TContentGallery }) => {
                 <a
                   key={item.id}
                   data-lg-size="1600-1067"
-                  className=" cursor-pointer"
+                  className=" cursor-pointer  hover:opacity-75 duration-700"
                   data-src={`${process.env.STRAPI_API_URL}${item.url}`}
                   data-sub-html={caption}
                 >
