@@ -3,7 +3,7 @@ import React from "react";
 
 const Menu = ({ menu }: { menu: Menu }) => {
   return (
-    <nav className="flex gap-5 ">
+    <nav className="gap-5 items-center hidden lg:flex">
       {menu.map((item: MenuItem) => {
         return (
           <Link

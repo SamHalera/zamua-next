@@ -52,3 +52,18 @@ type TPlaylist = {
   description: string;
   slug: string;
 };
+
+type TShow = {
+  id: number;
+  attributes: {
+    datetime: Date;
+    name: string;
+    venue: string;
+    venue_url: string;
+    location: string;
+    location_url: string;
+    ticket_url: string;
+    isPassed: boolean;
+    isCanceled: boolean;
+  };
+};
