@@ -5,7 +5,7 @@ const ProjectThumbnail = ({ project }: { project: TProject }) => {
   return (
     <Link href={`${process.env.NEXT_PUBLIC_FRONT}/projects/${project.slug}`}>
       <div
-        className="h-72 w-72sm:h-[400px] sm:w-[400px] bg-cover bg-bottom shadow-lg group"
+        className="h-72 w-72 sm:h-[400px] sm:w-[400px] bg-cover bg-bottom shadow-lg group"
         style={{
           backgroundImage: `url(${process.env.STRAPI_API_URL}${project.imageCover.url})`,
         }}

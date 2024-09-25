@@ -1,4 +1,5 @@
 import { Facebook, Instagram } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const ContentContactHero = ({
@@ -22,9 +23,17 @@ const ContentContactHero = ({
           className="text-center border-b pb-7"
           dangerouslySetInnerHTML={{ __html: component.text }}
         />
+
         <div className="flex gap-7 ">
-          <Facebook className="size-8 text-primary" />
-          <Instagram className="size-8 text-primary" />
+          <Link href={"https://www.facebook.com/zamua/"} target="_blank">
+            <Facebook className="size-10 text-primary" />
+          </Link>
+          <Link
+            href={"https://www.instagram.com/zamua_haleri/"}
+            target="_blank"
+          >
+            <Instagram className="size-10 text-primary" />
+          </Link>
         </div>
       </div>
     </div>
