@@ -24,7 +24,7 @@ const ContentSecondaryHero = ({
       >
         <div className="bg-black/60 h-[40vh] lg:h-[70vh] flex items-center px-10">
           <div
-            className="text-white font-bold text-center text-4xl sm:text-5xl md:text-6xlxl:text-7xl lg:text-start"
+            className="text-white font-bold text-center text-4xl sm:text-5xl md:text-6xl xl:text-7xl lg:text-start"
             dangerouslySetInnerHTML={{ __html: formatTitle(component.title) }}
           />
 
