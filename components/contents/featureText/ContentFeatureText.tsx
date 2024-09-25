@@ -42,14 +42,14 @@ const ContentFeatureText = ({
         )}
       </div>
       <div
-        className={cn("hidden lg:absolute right-80 top-20", {
+        className={cn("hidden lg:block lg:absolute right-80 top-20", {
           "bg-primary w-96 h-[500px]": component.model === "secondary",
           "bg-black w-[450px] h-[500px]":
             component.model === "primary" || component.model === "ternary",
         })}
       ></div>
       <div
-        className={cn("hidden lg:absolute left-96 top-96", {
+        className={cn("hidden lg:block lg:absolute left-96 top-96", {
           "bg-[#E3A53F] w-[500px] h-96":
             component.model === "primary" || component.model === "secondary",
           "bg-[#FE015A] w-[500px] h-72": component.model === "ternary",
