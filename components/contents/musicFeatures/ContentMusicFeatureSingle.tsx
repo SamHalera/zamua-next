@@ -26,7 +26,7 @@ const ContentMusicFeatureSingle = ({
       >
         <h2
           className={cn("text-white text-4xl lg:text-5xl", {
-            "text-black text-7xl md:text-8xl": path === "/",
+            "text-black text-7xl md:text-8xl lg:text-8xl": path === "/",
           })}
         >
           {element.title}
@@ -39,7 +39,7 @@ const ContentMusicFeatureSingle = ({
           {element.subtitle}
         </h3>
       </div>
-      <div id="iframe-container" className=" flex flex-col items-center">
+      <div className=" flex flex-col items-center">
         {element.image && children}
 
         <div
