@@ -7,7 +7,7 @@ import ContentGallery from "../contents/gallery/ContentGallery";
 const ProjectSingle = ({ project }: { project: TProject }) => {
   return (
     <>
-      <div className="p-6 md:p-12">
+      <div className="p-6 md:p-16">
         <Link
           className="mb-6 bg-primary text-black border-2 border-primary hover:bg-transparent hover:text-primary transition-all h-14 w-36 flex justify-center items-center "
           href={"/projects#toScroll"}
@@ -22,7 +22,7 @@ const ProjectSingle = ({ project }: { project: TProject }) => {
             }}
           />
 
-          <div className="flex flex-col md:flex-row gap-11 items-end">
+          <div className="flex flex-col md:flex-row gap-11 md:items-end items-center md:justify-center">
             <NextImage
               dataImage={project.imageCover}
               customClass="w-[300px] shadow-lg"
